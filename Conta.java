@@ -1,7 +1,7 @@
 class Conta{
 	//variaveis
 	int numero;
-	String dono;
+	Cliente titular;
 	double saldo;
 	double limite;
 
@@ -18,5 +18,10 @@ class Conta{
 	void deposita(double quantidade){
 		double novoSaldo = this.saldo + quantidade;
 		this.saldo += quantidade
+	}
+
+	void transfere(Conta destino, double valor){
+		this.saldo = this.saldo - valor;
+		destino.saldo = destino.saldo + valor;
 	}
 }
